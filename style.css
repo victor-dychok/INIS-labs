@@ -1,6 +1,7 @@
 /* Your Code Here */
 body{
     margin: 0;
+    background-color: #34cb5847;
     
     font-family: 'Merriweather', serif;
     font-size: 16px;
@@ -14,64 +15,74 @@ body{
     box-sizing: border-box;
 }
 
-.container {
-    width: 100%;
-    max-width: 1200px;
-    margin: 0 auto;
+.logo-title
+{
+    color: #348bcb;
 }
 
-
-/*Header*/
-.header
+.logo 
 {
-    padding-top: 30px;
-    width: 100%;
-    
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    z-index: 1000;
+    background-color: white;
+    margin: 10px auto;
+    display: flex;
+    justify-content: center;
+    padding: 20px;
+    box-shadow: 0 5px 10px #ccc;
+    border-radius: 10px;
 }
 
-.header__text
+.card-photo 
 {
-    color: darkblue;
-    font-size: 18px;
-    display: inline-block;
-    vertical-align: top;
+    display: block;
+    width: 200px;
+    height: 100px;
     margin: 0 60px;
 }
 
-.header__inner
+.navigation
 {
-    padding: 100;
-    
+    margin: 10px auto 0 auto;
     display: flex;
-    justify-content:space-between;
+    justify-content: center;
+    background-color: white;
+    border-radius: 10px;
 }
 
-
-/*Navigation*/
-
-.nav
+.nav-link
 {
-    font-size: 14px;
-    text-transform: none;
-    color: black;
-    text-align: center
+    margin: 0 10px;
+    padding: 10px;
 }
 
-.nav__link
+.intro
 {
-    display: inline-block;
-    margin: 0 15px;
-    position: relative;
-    
-    color: black;
-    text-decoration: none;
-    
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    background-color: #348bcb4d;
 }
+
+.intro-text
+{
+    margin: 100px auto;
+    font-size: 36px;
+}
+
+.intro-photo
+{
+    display: block;
+    width: 600px;
+    height: 400px;
+    margin: 0 auto;
+    vertical-align: middle;
+}
+
+
+
+
+
+
+
 
 
 
