@@ -1,0 +1,41 @@
+body{
+    margin: 0;
+    
+    background: url(site_images/bckgrnd.jpg);
+    font-size: 16px;
+    line-height: 1.6;
+    color: black;
+}
+
+.card
+{
+    width: 400px;
+    margin: 30px auto;
+    
+    padding: 20px;
+    background-color: #fff;
+    box-shadow: 0 5px 10px #ccc;
+    border-radius: 10px;
+}
+
+.card-photo
+{
+    display: block;
+    width: 200px;
+    height: 200px;
+    margin: 0 auto;
+    border-radius: 50%;
+}
+
+.title
+{
+    font-size: 30px;
+    color: #8c6798;
+    text-align: center;
+}
+
+.card-text
+{
+    font-size: 16px;
+    color: #3174a0;
+}

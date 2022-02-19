@@ -1,7 +1,7 @@
 /* Your Code Here */
 body{
     margin: 0;
-    background-color: #34cb5847;
+    background-color: #348bd5;
     
     font-family: 'Merriweather', serif;
     font-size: 16px;
@@ -27,8 +27,7 @@ body{
     display: flex;
     justify-content: center;
     padding: 20px;
-    box-shadow: 0 5px 10px #ccc;
-    border-radius: 10px;
+    box-shadow: 0 0 10px #050505c7;
 }
 
 .card-photo 
@@ -41,17 +40,20 @@ body{
 
 .navigation
 {
-    margin: 10px auto 0 auto;
+    margin: 10px auto 5px auto;
     display: flex;
     justify-content: center;
     background-color: white;
     border-radius: 10px;
+    box-shadow: 0 0 20px #050505c7;
 }
 
 .nav-link
 {
     margin: 0 10px;
     padding: 10px;
+    text-decoration: none;
+    color: black;
 }
 
 .intro
@@ -59,24 +61,47 @@ body{
     margin: 0 auto;
     display: flex;
     justify-content: center;
-    background-color: #348bcb4d;
+    background-color: #db52503b;
 }
 
 .intro-text
 {
-    margin: 100px auto;
+    margin: 50px auto;
     font-size: 36px;
 }
 
 .intro-photo
 {
     display: block;
-    width: 600px;
-    height: 400px;
+    width: 400px;
+    height: 250px;
     margin: 0 auto;
     vertical-align: middle;
 }
 
+.info-part
+{
+    margin: 0 auto 10px auto;
+    display: flex;
+    justify-content: center;
+    background-color: white;
+    border-radius: 10px;
+}
+
+.button
+{
+    margin: 10px auto;
+    text-decoration: none;
+    color: #000;
+    
+    display: inline-block;
+    
+    border: 3px solid #22527b;
+    border-radius: 20px;
+    
+    padding: 10px 15px;
+    max-width: 400px;
+}
 
 
 

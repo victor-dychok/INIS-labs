@@ -1,0 +1,65 @@
+body{
+    margin: 0;
+    
+    background: url(site_images/bckgrnd.jpg);
+    font-size: 16px;
+    line-height: 1.6;
+    color: black;
+}
+
+.card
+{
+    width: 600px;
+    margin: 20px auto;
+    
+    padding: 20px;
+    background-color: #fff;
+    box-shadow: 0 5px 10px #ccc;
+    border-radius: 10px;
+}
+
+.card-photo
+{
+    display: block;
+    width: 200px;
+    height: 200px;
+    margin: 0 auto;
+    border-radius: 50%;
+}
+
+.title
+{
+    font-size: 30px;
+    color: #8c6798;
+    text-align: center;
+}
+
+.card-text
+{
+    font-size: 18px;
+    color: #3174a0;
+}
+
+.link
+{
+    text-decoration: none;
+    color: #8d34a9;
+}
+
+.error-img
+{
+    display: block;
+    width: 400px;
+    height: 400px;
+    margin: 20px auto;
+    border-radius: 20px;
+}
+
+
+
+
+
+
+
+
+
