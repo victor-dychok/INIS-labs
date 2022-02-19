@@ -1,6 +1,6 @@
 body{
     margin: 0;
-    background-color: #348bd5;
+    background: url(site_images/bckgrnd.jpg);
     
     font-family: 'Merriweather', serif;
     font-size: 16px;
@@ -60,7 +60,6 @@ body{
     margin: 0 auto;
     display: flex;
     justify-content: center;
-    background-color: #db52503b;
 }
 
 .intro-text
@@ -103,18 +102,21 @@ body{
 }
 
 
+.card
+{
+    width: 440px;
+    margin: 20px auto;
+    
+    padding: 10px;
+    background-color: #fff;
+    box-shadow: 0 5px 10px #ccc;
+    border-radius: 10px;
+}
 
-
-
-
-
-
-
-
-
-
-
-
-
-
+.title
+{
+    font-size: 30px;
+    color: #8c6798;
+    text-align: center;
+}
 
