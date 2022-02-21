@@ -1,6 +1,5 @@
 body{
     margin: 0;
-    background: url(site_images/bckgrnd.jpg);
     
     font-family: 'Merriweather', serif;
     font-size: 16px;
@@ -16,7 +15,7 @@ body{
 
 .logo-title
 {
-    color: #8c6798;
+    color: #348bd5;
 }
 
 .logo 
@@ -26,7 +25,7 @@ body{
     display: flex;
     justify-content: center;
     padding: 20px;
-    box-shadow: 0 0 10px #050505c7;
+    box-shadow: 0 0 10px #348bd5;
 }
 
 .card-photo 
@@ -44,7 +43,7 @@ body{
     justify-content: center;
     background-color: white;
     border-radius: 10px;
-    box-shadow: 0 0 20px #8c6798;
+    box-shadow: 0 0 20px #9cc9ef;
 }
 
 .nav-link
@@ -66,8 +65,8 @@ body{
 
 .nav-link:hover
 {
-    color: #8c6798;
-    border: 3px solid #8c6798;
+    color: #348bd5;
+    border: 3px solid #348bd5;
 }
 
 
@@ -78,9 +77,9 @@ body{
     font-size: 16px;
     text-decoration: none;
     color: black;
-    background-color: #d09ee1;
+    background-color: #348bd5;
     
-    border: 3px solid #d09ee1;
+    border: 3px solid #348bd5;
     border-radius: 5px;
     
     display: inline-block;
@@ -93,6 +92,7 @@ body{
 .button:hover
 {
     background-color: white;
+    color: #348bd5;
 }
 
 
@@ -112,7 +112,6 @@ body{
 .intro-photo
 {
     display: block;
-    width: 400px;
     height: 250px;
     margin: 0 auto;
     vertical-align: middle;
@@ -134,14 +133,14 @@ body{
     
     padding: 10px;
     background-color: #fff;
-    box-shadow: 0 5px 10px #8c6798;
+    box-shadow: 0 5px 10px #348bd5;
     border-radius: 10px;
 }
 
 .title
 {
     font-size: 30px;
-    color: #8c6798;
+    color: #348bd5;
     text-align: center;
     margin: 0 auto;
 }
@@ -153,13 +152,27 @@ body{
     padding: 20px;
     width: 440px;
     
-    background-color: #fff;
-    box-shadow: 0 5px 10px #8c6798;
+    background-color: #f2f2f2;
+    box-shadow: 0 0 5px #f2f2f2;
     border-radius: 10px;
     text-align: left;
     
     display: inline-block;
     
+}
+
+.card-product
+{
+    margin: 30px;
+    
+    padding: 20px;
+    
+    background-color: white;
+    border: 5px solid #2076c0;
+    border-radius: 10px;
+    text-align: left;
+    
+    display: inline-block;
 }
 
 .product-info
