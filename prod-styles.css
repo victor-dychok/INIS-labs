@@ -16,7 +16,7 @@ body{
 
 .logo-title
 {
-    color: #348bcb;
+    color: #8c6798;
 }
 
 .logo 
@@ -71,6 +71,31 @@ body{
 }
 
 
+.button
+{
+    margin: 2px 5px;
+    padding: 10px;
+    font-size: 16px;
+    text-decoration: none;
+    color: black;
+    background-color: #d09ee1;
+    
+    border: 3px solid #d09ee1;
+    border-radius: 5px;
+    
+    display: inline-block;
+    vertical-align: top;
+    
+    transition: color 0.2s linear;
+    transition: background-color 0.2s linear;
+}
+
+.button:hover
+{
+    background-color: white;
+}
+
+
 .intro
 {
     margin: 0 auto;
@@ -102,26 +127,10 @@ body{
     border-radius: 10px;
 }
 
-.button
-{
-    margin: 10px auto;
-    text-decoration: none;
-    color: #000;
-    
-    display: inline-block;
-    
-    border: 3px solid #22527b;
-    border-radius: 20px;
-    
-    padding: 10px 15px;
-    max-width: 400px;
-}
-
-
-.card
+.product-name
 {
     width: 440px;
-    margin: 20px auto;
+    margin: 20px auto 5px 50px;
     
     padding: 10px;
     background-color: #fff;
@@ -134,5 +143,80 @@ body{
     font-size: 30px;
     color: #8c6798;
     text-align: center;
+    margin: 0 auto;
 }
+
+.card
+{
+    margin: 5px 10px 20px 50px;
+    
+    padding: 20px;
+    width: 440px;
+    
+    background-color: #fff;
+    box-shadow: 0 5px 10px #8c6798;
+    border-radius: 10px;
+    text-align: left;
+    
+    display: inline-block;
+    
+}
+
+.product-info
+{
+    line-height: 1.2;
+    vertical-align: top;
+    font-size: 24px;
+    display: inline-block;
+    margin: 0 10px;
+}
+
+.product-price
+{
+    margin: 0;
+    padding: 20px 0 5px 0;
+}
+
+.product-text
+{
+    margin: 0;
+    padding: 0;
+    line-height: 1;
+    vertical-align: top;
+    font-size: 18px;
+    display: inline-block;
+}
+
+.prod-variants
+{
+    margin: 20px 0;
+    
+    width: 100%;
+    font-size: 18px;
+    
+    background-color: transparent;
+    border-radius: 10px;
+    text-align: left;
+    
+    display: block;
+}
+
+.container
+{
+    margin: 15px 0;
+    padding: 0;
+    
+    background-color: transparent;
+    display: block;
+}
+
+
+
+
+
+
+
+
+
+
 
