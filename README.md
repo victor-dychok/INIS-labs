@@ -1,4 +1,4 @@
 # INIS-labs
 Дычок Виктор Сергеевич
 910903
-https://stupefied-perlman-feda0b.netlify.app
+ссылка на сайт лабораторной работы https://stupefied-perlman-feda0b.netlify.app
