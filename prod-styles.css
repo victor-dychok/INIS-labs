@@ -75,10 +75,13 @@ body{
     margin: 2px 5px;
     padding: 10px;
     font-size: 16px;
+    font-family: Catamaran;
+    text-align: center;
     text-decoration: none;
+    flex-basis: 50%;
     color: black;
     background-color: #348bd5;
-    
+    box-sizing: border-box;
     border: 3px solid #348bd5;
     border-radius: 5px;
     
@@ -163,12 +166,13 @@ body{
 
 .card-product
 {
-    margin: 30px;
+    margin: 10px 50px;
+    width: 320px;
     
     padding: 20px;
     
     background-color: white;
-    border: 5px solid #2076c0;
+    border: 3px solid #2076c0;
     border-radius: 10px;
     text-align: left;
     
@@ -179,6 +183,7 @@ body{
 {
     line-height: 1.2;
     vertical-align: top;
+    width: 440px;
     font-size: 24px;
     display: inline-block;
     margin: 0 10px;
@@ -216,14 +221,19 @@ body{
 
 .container
 {
-    margin: 15px 0;
-    padding: 0;
+    gap: 15px;
+    display: flex;
+    justify-content:space-around;
     
     background-color: transparent;
     display: block;
 }
 
-
+.link-container
+{
+    display: flex;
+    gap: 10px;
+}
 
 
 
