@@ -70,10 +70,6 @@ if (details)
         img.classList.add("intro-photo");
         cardProduct.append(img);
         
-        let imgBack = document.createElement("img");
-        imgBack.src = item.default;
-        imgBack.classList.add("intro-photo");
-        
         let prodInfo = document.createElement("div");
         prodInfo.classList.add("product-info");
         prodInfo.style.width = "700px";
@@ -130,7 +126,13 @@ if (details)
                 btn.innerHTML = color;
                 colorContainer.appendChild(btn);
                 btn.addEventListener('click', e => {
-                    img.src = item.colors[btn.textContent].front;                 
+                    img.src = item.colors[btn.textContent].front;   
+                    frontButton.addEventListener('click', e => {
+                        img.src = item.colors[btn.textContent].front;
+                    })
+                    backButton.addEventListener('click', e => {
+                        img.src = item.colors[btn.textContent].back;
+                    })
                 })
             }
     }
