@@ -68,7 +68,15 @@ if (details)
         let img = document.createElement("img");
         img.src = item.default;
         img.classList.add("intro-photo");
-        cardProduct.append(img);
+        cardProduct.appendChild(img);
+        img.setAttribute('id', 'front-img');
+        
+        let imgBack = document.createElement("img");
+        imgBack.src = item.default;
+        imgBack.classList.add("intro-photo");
+        cardProduct.appendChild(imgBack);
+        imgBack.setAttribute('id', 'back-img');
+        
         
         let prodInfo = document.createElement("div");
         prodInfo.classList.add("product-info");
@@ -116,6 +124,16 @@ if (details)
         colorText.textContent = "Color: ";
         colorContainer.appendChild(colorText);
         
+        frontButton.addEventListener('click', e => {
+            document.getElementById('back-img').style.display = "none";
+            document.getElementById('front-img').style.display = "block";
+        })
+        
+        backButton.addEventListener('click', e => {
+            document.getElementById('front-img').style.display = "none";
+            document.getElementById('back-img').style.display = "block";
+        })
+        
         img.src = item.colors.white.front;
         for (let color in item.colors)
             {
@@ -125,15 +143,12 @@ if (details)
                 btn.style.borderColor = "black";
                 btn.innerHTML = color;
                 colorContainer.appendChild(btn);
+                            
                 btn.addEventListener('click', e => {
-                    img.src = item.colors[btn.textContent].front;   
-                    frontButton.addEventListener('click', e => {
-                        img.src = item.colors[btn.textContent].front;
-                    })
-                    backButton.addEventListener('click', e => {
-                        img.src = item.colors[btn.textContent].back;
-                    })
+                    img.src = item.colors[btn.textContent].front;
+                    imgBack.src = item.colors[btn.textContent].back;
                 })
             }
+        document.getElementById('back-img').style.display = "none";
     }
 })
