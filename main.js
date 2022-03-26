@@ -66,9 +66,13 @@ if (details)
         
         
         let img = document.createElement("img");
-        img.src = item.colors.white.front;
+        img.src = item.default;
         img.classList.add("intro-photo");
         cardProduct.append(img);
+        
+        let imgBack = document.createElement("img");
+        imgBack.src = item.default;
+        imgBack.classList.add("intro-photo");
         
         let prodInfo = document.createElement("div");
         prodInfo.classList.add("product-info");
@@ -114,15 +118,20 @@ if (details)
         let colorText = document.createElement("p");
         colorText.classList.add("product-text");
         colorText.textContent = "Color: ";
-        colorContainer.appendChild(colorText);      
+        colorContainer.appendChild(colorText);
         
-        
-        /*for (let i = 0; i < colorsArray.length; ++i)
+        img.src = item.colors.white.front;
+        for (let color in item.colors)
             {
-                let colorButton = document.createElement("a");
-                colorButton.classList.add("button");
-                colorContainer.appendChild(colorButton);
-            }*/
-        
+                let btn = document.createElement("a");
+                btn.classList.add("button");
+                btn.style.background = color;
+                btn.style.borderColor = "black";
+                btn.innerHTML = color;
+                colorContainer.appendChild(btn);
+                btn.addEventListener('click', e => {
+                    img.src = item.colors[btn.textContent].front;                 
+                })
+            }
     }
 })
