@@ -21,26 +21,40 @@
     
     
 <body>
+    
     <div class="logo">
         <img class="card-photo" src="site_images/logo.png" alt="Server error">
         <h1 class="logo-title">Инжинерная психология (ИНИС)</h1>
     </div>   
     
     <div class="container-spec container" id = "cont">
-    <!--    <div class="card-product">
-        
-        <img class="intro-photo" src="shirt_images/plaid-white-back.png" alt="Тут должна быть майка, но что-то пошло не так"> 
-        
-        <div class="product-info">
-            <p class="product-price">Beep Boop</p>
-            <p class="product-text"> Авалибле ин 4 колорс</p>
-            
-                <div class="container">
-                    <a href="./under-constr.html" class="button">Куик Вю</a>
-                    <a href="./tshirts.html" class="button">Си падже</a>
-                </div>
+
+    <div class="b-popup" id="popup1">
+        <div class="b-popup-content">
+            <h1 class="title" id = "nameText"></h1>
+            <img class="intro-photo" alt = "Server error" id="quick-img">
+            <p class="product-price" id = "price-text"></p>
+            <p class="product-text" id = "prod-text"></p>
+            <a href="javascript:PopUpHide()" class="button">Hide</a>
         </div>
-    </div> -->
+    </div>
+        
+    <script src="http://code.jquery.com/jquery-2.0.2.min.js"></script>
+        
+<script>
+    $(document).ready(function(){
+        //Скрыть PopUp при загрузке страницы    
+        PopUpHide();
+    });
+    //Функция отображения PopUp
+    function PopUpShow(){
+        $("#popup1").show();
+    }
+    //Функция скрытия PopUp
+    function PopUpHide(){
+        $("#popup1").hide();
+    }
+</script>
     </div> 
     
     

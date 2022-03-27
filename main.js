@@ -8,13 +8,16 @@ for (let i = 0 ; i < shirts.length; i++) {
     card.classList.add("card-product"); // добавляем класс к контейнеру
     myDiv.appendChild(card); // вставляем элемент на страницу
     card.setAttribute("data-id", i);
+    
     let img = document.createElement('img');
     img.height = "200"; 
     card.appendChild(img);
     img.src = shirts[i].colors.white.front;
+    
     let text = document.createElement('h3');
     text.textContent = shirts[i].name; //добавление текста
     card.appendChild(text);
+    
     let NumOfColors = document.createElement('p');
     if (Object.keys(shirts[i].colors).length > 1) 
     {NumOfColors.textContent = "Футболка представлена в " +Object.keys(shirts[i].colors).length+  " цветах";}
@@ -25,14 +28,23 @@ for (let i = 0 ; i < shirts.length; i++) {
     linkContainer.classList.add("link-container")
     card.appendChild(linkContainer);
     
-    let buttonQuick = document.createElement(`button`);
-    buttonQuick.innerHTML = "Quick view"
+    let buttonQuick = document.createElement(`a`);
+    buttonQuick.innerHTML = "Quick view";
+    buttonQuick.href = "javascript:PopUpShow()"
     buttonQuick.classList.add("button");
+    buttonQuick.addEventListener('click', e =>{
+        let quickItem = document.getElementById("quick-img");
+        quickItem.src = shirts[i].colors.white.front;
+    })
     linkContainer.appendChild(buttonQuick);
+    document.getElementById("price-text").textContent = shirts[i].price;
+    document.getElementById("prod-text").textContent = shirts[i].description;
+    document.getElementById("nameText").textContent = shirts[i].name;
     
     let hrefDetails = document.createElement(`a`);
     hrefDetails.classList.add("button");
     linkContainer.appendChild(hrefDetails);
+    
     hrefDetails.innerHTML = "See page"
     hrefDetails.href = "tshirts.html";
     hrefDetails.search = "id=" + i;
