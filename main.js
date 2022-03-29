@@ -1,3 +1,4 @@
+$("#popup1").hide();
 document.addEventListener('DOMContentLoaded', function() {
 let myDiv = document.querySelector(".container-spec");
 let details = document.querySelector(".details-container");
