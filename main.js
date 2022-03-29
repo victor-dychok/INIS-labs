@@ -48,7 +48,7 @@ for (let i = 0 ; i < shirts.length; i++) {
     hrefDetails.innerHTML = "See page"
     hrefDetails.href = "tshirts.html";
     hrefDetails.search = "id=" + i;
-    document.getElementById("popup1").style.opacity = 0;
+    
 };
 
 if (details)
