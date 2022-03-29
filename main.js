@@ -1,4 +1,3 @@
-$("#popup1").hide();
 document.addEventListener('DOMContentLoaded', function() {
 let myDiv = document.querySelector(".container-spec");
 let details = document.querySelector(".details-container");
@@ -49,6 +48,8 @@ for (let i = 0 ; i < shirts.length; i++) {
     hrefDetails.innerHTML = "See page"
     hrefDetails.href = "tshirts.html";
     hrefDetails.search = "id=" + i;
+    
+    $("#popup1").hide();
 };
 
 if (details)
