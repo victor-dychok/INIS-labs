@@ -3,6 +3,8 @@ let myDiv = document.querySelector(".container-spec");
 let details = document.querySelector(".details-container");
 
 if (myDiv)
+    {
+        PopUpHide();
 for (let i = 0 ; i < shirts.length; i++) {
     let card = document.createElement('div'); // Создаем div и помещаем его в переменную card
     card.classList.add("card-product"); // добавляем класс к контейнеру
@@ -50,7 +52,7 @@ for (let i = 0 ; i < shirts.length; i++) {
     hrefDetails.search = "id=" + i;
     
 };
-
+    }
 if (details)
     {
         let str = location.search;
