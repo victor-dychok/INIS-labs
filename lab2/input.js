@@ -7,20 +7,30 @@ let escFunction;
 for(let i = 0; i < draggableElements.length; i++)
     {
         draggableElements[i].draggable = true;
+
+        
+        
+        workspace.addEventListener("dragover", (e) => {
+            e.preventDefault();
+            });
+        workspace.addEventListener("drop", () => {
+            drop = true;
+            });
+        
+
         draggableElements[i].addEventListener('dragend', (e)=>{
-            draggableElements[i].style.top = e.pageY - positionY + 'px';
-            draggableElements[i].style.left = e.pageX - positionX + 'px';
+            if (drop)
+            {
+                draggableElements[i].style.top = e.pageY - positionY + 'px';
+                draggableElements[i].style.left = e.pageX - positionX + 'px';
+                drop = false;
+            }
         })
         draggableElements[i].addEventListener('dragstart', (e)=>{
             positionX = e.offsetX;
             positionY = e.offsetY;
-            document.addEventListener('keyup', escFunction = (e) => {
-                if (e.key == "Escape")
-                    {
-                        
-                    }
-            })
         })
+
         
         draggableElements[i].addEventListener('click', (e)=>{
             e.stopPropagation();
@@ -33,7 +43,7 @@ for(let i = 0; i < draggableElements.length; i++)
                     draggableElements[j].style.background = 'red';
             }
         })
-        
+
         workSpace.addEventListener('click', (e) => {
             workSpace.ontouchmove = null;
             draggableElements[i].style.background = 'red';
