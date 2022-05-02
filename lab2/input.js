@@ -88,6 +88,7 @@ for(let i = 0; i < draggableElements.length; i++)
             {
                 workSpace.onmousemove = null;
                 isDraged = false;
+                workSpace.ontouchmove = null;
             }
         })
         
