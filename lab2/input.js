@@ -1,13 +1,11 @@
 const draggableElements = document.querySelectorAll('.target');
 const workSpace = document.querySelector('#workspace');
-let positionX;
-let positionY;
-let escFunction;
-let touchStartX;
-let touchStartY;
-let isDraged = false;
 let object;
-let objectDoubleTouch;
+let startCoordX;
+let startCoordY;
+let dragInProcess = false;
+let obj;
+let obj2;
 
 for(let i = 0; i < draggableElements.length; i++)
     {
@@ -24,39 +22,39 @@ for(let i = 0; i < draggableElements.length; i++)
         
 
         workSpace.addEventListener('touchstart', (e) => {
-            if (e.targetTouches[1] != undefined)
-            {
-                object.onmousemove = null;
-                object.style.left = touchStartX;
-                object.style.top = touchStartY;
+            if(e.targetTouches[1] != undefined){
+                workspace.ontouchmove=null;
+                obj2.style.top = startCoordY;
+                obj2.style.left = startCoordX;
+                startCoordX = 0;
+                startCoordY = 0;
+                dragInProcess = false;
             }
-            if (isDraged)
-            {
-                object.onmousemove = null;
-                object.ontouchend = null;
-                object.style.left = touchStartX;
-                object.style.top = touchStartY;
-                touchStartX = null;
-                touchStartY = null;
-                isDraged = false;
+            if (dragInProcess){
+                obj.ontouchend = null;
+                obj.ontouchmove = null;
+                obj.style.left = startCoordX;
+                obj.style.top = startCoordY;
+                dragInProcess = false;
+                startCoordX = 0;
+                startCoordY = 0;
             }
-            if (e.target != workSpace)
-            {
-                object = e.target;
-                touchStartX = e.target.style.left;
-                touchStartY = e.target.style.top;
-                object.ontouchmove = (e) => {    
-                    isDraged = true;
-                    draggableElements[i].style.top = e.targetTouches[0].pageY - object.offsetHeight/2 + 'px';
-                    draggableElements[i].style.left = e.targetTouches[0].pageX - object.offsetWidth/2 + 'px';
-                }
-                object.ontouchend = () => {
-                    isDraged = false;
-                    touchStartX = null;
-                    touchStartY = null;
-                    object.ontouchmove = null;
-                }
-            }
+            if (e.target != workspace){
+                obj = e.target;
+                startCoordX = obj.style.left;
+                startCoordY = obj.style.top;
+                obj.ontouchmove = (e) => {
+                    dragInProcess = true;
+                    obj.style.top = e.targetTouches[0].pageY - obj.offsetHeight / 2 + 'px';
+                    obj.style.left = e.targetTouches[0].pageX - obj.offsetWidth / 2 + 'px';
+                } 
+                obj.ontouchend = () => {
+                    dragInProcess = false;
+                    startCoordX = 0;
+                    startCoordY = 0;
+                    obj.ontouchmove = null;
+               }
+            }  
         })
 
 
@@ -93,9 +91,6 @@ for(let i = 0; i < draggableElements.length; i++)
         })
         
         draggableElements[i].addEventListener('dblclick', (e)=>{
-            objectDoubleTouch = e.target;
-            touchStartX = objectDoubleTouch.style.left;
-            touchStartY = objectDoubleTouch.style.top;
                 positionX = e.offsetX;
                 positionY = e.offsetY;
             workSpace.onmousemove = (e)=>
@@ -103,9 +98,18 @@ for(let i = 0; i < draggableElements.length; i++)
                 draggableElements[i].style.top = e.pageY - positionY + 'px';
                 draggableElements[i].style.left = e.pageX - positionX + 'px';
             }
+
+            obj2 = e.target;
+            startCoordX = obj2.style.left;
+            startCoordY = obj2.style.top;
+            workspace.ontouchmove = (e) => {
+                dragInProcess = true;
+                obj2.style.top = e.targetTouches[0].pageY -  obj2.offsetHeight / 2 + 'px';
+                obj2.style.left = e.targetTouches[0].pageX -  obj2.offsetWidth / 2 + 'px';
+            }
         })
         
-        document.addEventListener('keydown', function(e) {
+        /*document.addEventListener('keydown', function(e) {
             switch (e.keyCode) {
                 case 37:
                     draggableElements[0].style.left = 0 + 'px';
@@ -120,7 +124,7 @@ for(let i = 0; i < draggableElements.length; i++)
                     alert('down');
                     break;
             }
-        });
+        });*/
 
         
     }
