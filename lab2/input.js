@@ -50,8 +50,6 @@ for(let i = 0; i < draggableElements.length; i++)
                 } 
                 obj.ontouchend = () => {
                     dragInProcess = false;
-                    startCoordX = 0;
-                    startCoordY = 0;
                     obj.ontouchmove = null;
                }
             }  
