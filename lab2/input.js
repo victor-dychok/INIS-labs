@@ -2,7 +2,9 @@ const draggableElements = document.querySelectorAll('.target');
 const workSpace = document.querySelector('#workspace');
 let object;
 let startCoordX;
+let startCoordX1;
 let startCoordY;
+let startCoordY1;
 let dragInProcess = false;
 let obj;
 let obj2;
@@ -25,10 +27,8 @@ for(let i = 0; i < draggableElements.length; i++)
         workSpace.addEventListener('touchstart', (e) => {
             if(e.targetTouches[1] != undefined){
                 workspace.ontouchmove=null;
-                obj2.style.top = startCoordY;
-                obj2.style.left = startCoordX;
-                startCoordX = 0;
-                startCoordY = 0;
+                obj2.style.top = startCoordY1;
+                obj2.style.left = startCoordX1;
                 dragInProcess = false;
                 isDraged = false;
             }
@@ -101,8 +101,8 @@ for(let i = 0; i < draggableElements.length; i++)
             }
 
             obj2 = e.target;
-            startCoordX = obj2.style.left;
-            startCoordY = obj2.style.top;
+            startCoordX1 = obj2.style.left;
+            startCoordY1 = obj2.style.top;
             workspace.ontouchmove = (e) => {
                 isDraged = true;
                 obj2.style.top = e.targetTouches[0].pageY -  obj2.offsetHeight / 2 + 'px';
