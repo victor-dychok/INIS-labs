@@ -6,6 +6,7 @@ let startCoordY;
 let dragInProcess = false;
 let obj;
 let obj2;
+let isDraged = false;
 
 for(let i = 0; i < draggableElements.length; i++)
     {
@@ -29,6 +30,7 @@ for(let i = 0; i < draggableElements.length; i++)
                 startCoordX = 0;
                 startCoordY = 0;
                 dragInProcess = false;
+                isDraged = false;
             }
             if (dragInProcess){
                 obj.ontouchend = null;
@@ -36,8 +38,6 @@ for(let i = 0; i < draggableElements.length; i++)
                 obj.style.left = startCoordX;
                 obj.style.top = startCoordY;
                 dragInProcess = false;
-                startCoordX = 0;
-                startCoordY = 0;
             }
             if (e.target != workspace){
                 obj = e.target;
@@ -86,8 +86,11 @@ for(let i = 0; i < draggableElements.length; i++)
         })
 
         workSpace.addEventListener('click', (e) => {
-            workSpace.ontouchmove = null;
-            draggableElements[i].style.background = 'red';
+            if (isDraged)
+            {
+                workSpace.onmousemove = null;
+                isDraged = false;
+            }
         })
         
         draggableElements[i].addEventListener('dblclick', (e)=>{
@@ -103,7 +106,7 @@ for(let i = 0; i < draggableElements.length; i++)
             startCoordX = obj2.style.left;
             startCoordY = obj2.style.top;
             workspace.ontouchmove = (e) => {
-                dragInProcess = true;
+                isDraged = true;
                 obj2.style.top = e.targetTouches[0].pageY -  obj2.offsetHeight / 2 + 'px';
                 obj2.style.left = e.targetTouches[0].pageX -  obj2.offsetWidth / 2 + 'px';
             }
